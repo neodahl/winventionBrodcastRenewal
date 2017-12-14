@@ -5,9 +5,15 @@
 	<meta charset="UTF-8">
 	<title>윈벤션 리뉴얼 작업 리스트</title>
 	<style type="text/css">
+		/*reset*/
 		li {
 			list-style: none;
 		}
+		a {
+			text-decoration: none;
+		}
+
+		/*index style*/
 		main {
 			width: 80vw;
 			margin: 0 auto;
@@ -24,6 +30,7 @@
 		main > ul > li:before {
 			content: '▶';
 			margin-right: 4px;
+			vertical-align: top;
 		}
 		main > ul li a {
 			font-size: 20px;
@@ -35,7 +42,8 @@
 		}
 		main > ul li p {
 			color: #777;
-			padding-left: 15px;
+			padding-left: 26px;
+			margin: 0;
 		}
 		li ul {
 			padding: 15px;
