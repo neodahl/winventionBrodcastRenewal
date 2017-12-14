@@ -1,0 +1,411 @@
+@charset "utf-8";
+
+/****************************************/
+
+/*	Name: 북미 윈벤션
+/*	PART: reset STYLE
+/*	Version: 1.0
+/*	Author: winvention UI개발팀
+/*  Description : 방송채널 UI개편 / reset, common 초기 설정과, 공통인 부분을 정의 한 css
+	미디어쿼리기준
+	PC웹 : 1280px
+	태블릿 세로버전 : @media all and (min-width: 1024px) and (max-width:1280px) {}
+	태블릿 가로버전 : @media all and (min-width: 768px) and (max-width: 1023px) {}
+	모바일 버전 : @media all and (max-width: 767px){}
+/****************************************/
+
+/* 공통 */
+
+/*채널 sns 공유*/
+.share_btn_area button { color: transparent; font-size: 0; display: inline-block; width: 33px; height: 33px; margin-left: 10px; border-radius: 50%; }
+.share_btn_area button.btn_facebook { background: url(../images/n_channel/ico_facebook.gif) no-repeat center center; background-size: contain; }
+.share_btn_area button.btn_twitter { background: url(../images/n_channel/ico_twitter.gif) no-repeat center center; background-size: contain; }
+.share_btn_area button.btn_kakao { background: url(../images/n_channel/ico_kakao.gif) no-repeat center center; background-size: contain; }
+.share_btn_area button.btn_link { background: url(../images/n_channel/ico_link.gif) no-repeat center center; background-size: contain; }
+
+/*common style*/
+.f_mint { color: #35c2cc !important; }
+.f_magenta { color: #de40be !important; }
+
+/* 채널 컨텐츠 */
+.movie_area:after { content: ""; display: block; clear: both; }
+.movie_area > div { float: left; }
+.movie_area > div.video_area { width: 793px; }
+.video_view_area { position: relative; }
+.video_view_area img { width: 100%; }
+.video_view_area video { width: 100%; }
+.video_play_btn { position: absolute; left: 50%; top: 50%; margin-left: -50px; margin-top: -50px; }
+.movie_area > div.video_con { float: right; width: 347px; }
+.video_txt { width: 100%; text-align: center; color: #fff; font-size: 22px; position: absolute; left: 0; bottom: 35px; }
+.user_profile_area:after { content: ""; display: block; clear: both; }
+.user_profile_img { float: left; margin-right: 15px; }
+.user_profile_img img { border-radius: 90px }
+.user_profile_txt { }
+.user_profile_txt em { display: block; font-size: 18px; color: #333; font-weight: bold; padding-top: 20px; }
+.user_profile_txt span { font-size: 14px; color: #999; }
+.video_con_txt strong { display: block; margin-top: 20px; font-size: 28px; color: #333; font-weight: normal; }
+.video_con_dsc > div.video_con_dsc_info { margin: 30px 0 20px 0; height: 270px; overflow-y: scroll; padding: 0 10px 10px 0; }
+.video_con_dsc > div.video_con_dsc_info > p { color: #888; font-size: 14px; line-height: 1.5; }
+.video_btn_area { padding: 20px 0; border-bottom: 1px solid #ebecf1; position: relative; }
+.video_btn_set button { display: inline-block; margin-right: 25px; height: 24px; }
+.btn_hit { position: relative; padding-left: 30px; font-size: 15px; color: #333; font-weight: bold; }
+.btn_hit:before { content: ""; display: inline-block; width: 24px; height: 25px; background: url(../images/n_channel/ico_heart.gif) no-repeat 0 0; position: absolute; left: 0; top: 4px; }
+.btn_hit.on:before { content: ""; display: inline-block; width: 24px; height: 25px; background: url(../images/n_channel/ico_heart_on.gif) no-repeat 0 0; position: absolute; left: 0; top: 4px }
+.btn_next_vew { position: relative; padding: 5px 0 0 25px; font-size: 14px; color: #333; font-weight: bold; }
+.btn_next_vew:before { content: ""; display: inline-block; width: 20px; height: 20px; background: url(../images/n_channel/ico_timer.gif) no-repeat 0 0; position: absolute; left: 0; top: 3px; }
+.video_btn_set02 { position: absolute; right: 0; top: 15px; }
+.play_btn_view button { width: 100%; padding: 10px 0; text-align: center; }
+
+/* 모바일 버전 컨트롤 */
+.m_btn_play_area { display: none; }
+.m_btn_mv_txt { display: none; }
+.m_btn_list_area { display: none; }
+@media all and (min-width:1024px) and (max-width:1279px) {
+	.movie_area > div.video_area { width: 640px; }
+	.movie_area > div.video_con { width: 310px; }
+	.video_con_dsc > div.video_con_dsc_info { height: 175px; overflow-y: scroll; }
+	.video_con_txt strong { margin-top: 20px; }
+	.video_con_dsc > div.video_con_dsc_info > p { margin-bottom: 10px; padding-right: 10px; }
+	.channel_wrapper { width: 990px; margin: 0 auto; }
+	.video_txt { font-size: 18px; }
+	.play_btn_view { margin-top: 30px; }
+}
+@media all and (min-width:768px) and (max-width:1023px) {
+	.movie_area > div.video_area { width: 500px; }
+	.movie_area > div.video_con { width: 230px; }
+	.channel_wrapper { width: 768px; margin: 0 auto; }
+	.video_con_txt strong { font-size: 20px; margin-top: 15px; }
+	.video_con_dsc > div.video_con_dsc_info { margin-top: 15px; height: 145px; overflow-y: scroll; }
+	.video_txt { font-size: 16px; }
+	.play_btn_view { margin-top: 17px; }
+}
+@media all and (max-width:767px) {
+	.channel_wrapper { width: inherit; }
+	.movie_area > div { float: inherit; width: inherit; }
+	.movie_area > div.video_area { width: inherit; }
+	.movie_area > div.video_con { float: inherit; width: inherit; padding: 15px 14px; }
+	.video_txt { font-size: 12px; bottom: 20px; }
+	.video_txt span { display: block; margin-bottom: 5px; }
+	.video_play_btn { position: absolute; left: 50%; top: 50%; margin-left: -35px; margin-top: -35px; }
+	.video_play_btn button img { width: 30px; height: 30px; padding: 20px; }
+	.m_btn_play_area { margin: 14px; display: block; }
+	.m_btn_play_area button { padding: 8px 0; }
+	.video_btn_area { margin: 0 14px; padding: 10px 0; }
+	.play_btn_view { display: none; }
+	.video_btn_set button { margin-right: 10px; }
+	.btn_hit { position: relative; padding-left: 20px; font-size: 12px; color: #333; font-weight: bold; }
+	.btn_hit:before { content: ""; display: inline-block; width: 24px; height: 20px; background: url(../images/n_channel/ico_heart.gif) no-repeat; position: absolute; left: 0; top: 5px; background-size: 18px; }
+	.btn_hit.on:before { content: ""; display: inline-block; width: 24px; height: 20px; background: url(../images/n_channel/ico_heart_on.gif) no-repeat; position: absolute; left: 0; top: 0; background-size: 18px; }
+	.btn_next_vew { position: relative; padding-left: 20px; font-size: 12px; color: #333; font-weight: bold; width: 30px; height: 15px; }
+	.btn_next_vew span { display: none; }
+	.btn_next_vew:before { content: ""; display: inline-block; width: 20px; height: 20px; background: url(../images/n_channel/ico_timer.gif) no-repeat; position: absolute; left: 0; top: 4px; background-size: 16px; }
+	.share_btn_area button { color: transparent; font-size: 0; display: inline-block; width: 20px; height: 20px; margin-left: 10px; }
+	.share_btn_area button.btn_facebook { background: url(../images/n_channel/ico_facebook.gif) no-repeat center center; background-size: 20px; }
+	.share_btn_area button.btn_tweeter { background: url(../images/n_channel/ico_tweeter.gif) no-repeat center center; background-size: 20px; }
+	.share_btn_area button.btn_kakao { background: url(../images/n_channel/ico_kakao.gif) no-repeat center center; background-size: 20px; }
+	.share_btn_area button.btn_link { background: url(../images/n_channel/ico_link.gif) no-repeat center center; background-size: 20px; }
+	.video_btn_set02 { position: absolute; right: 0; top: 13px; }
+	.user_profile_img img { width: 60px; height: 60px; }
+	.user_profile_txt em { padding-top: 10px; font-size: 12px; }
+	.user_profile_txt span { font-size: 12px; display: inline-block; margin-top: 5px; }
+	.video_con_txt strong { font-size: 19px; margin-top: 15px; }
+	.video_con_dsc { height: 85px; overflow: hidden; position: relative; border-bottom: 1px solid #eee; }
+	.video_con_dsc div.video_con_dsc_info { margin-top: 15px; padding-right: 45px; position: relative; padding-bottom: 20px; overflow: inherit; }
+	.video_con_dsc div.video_con_dsc_info > p { height: 55px; font-size: 12px; color: #888; line-height: 1.5; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; word-wrap: break-word; }
+	.video_con_dsc.on { height: inherit; overflow: inherit; }
+	.video_con_dsc.on div.video_con_dsc_info > p { height: auto !important; overflow: inherit; text-overflow: inherit; display: inherit; -webkit-line-clamp: inherit; -webkit-box-orient: inherit; word-wrap: inherit; }
+	.video_con_dsc div.video_con_dsc_info { height: inherit; }
+	.m_btn_mv_txt { display: block; position: absolute; right: -5px; bottom: 13px; }
+	.m_btn_mv_txt button { color: #999; font-size: 11px; padding: 5px 10px; }
+	.m_btn_mv_txt:after { content: ""; display: inline-block; width: 14px; height: 10px; background: url(../images/n_channel/btn_pg_open.png) no-repeat; background-size: 14px; position: relative; left: -10px; top: 3px; }
+	.m_btn_mv_txt.on:after { content: ""; display: inline-block; width: 14px; height: 10px; background: url(../images/n_channel/btn_pg_close.png) no-repeat; background-size: 14px; position: relative; left: -10px; top: 3px; }
+	.movie_list_container { border-bottom: 9px solid #f4f4f4; }
+	.m_btn_list_area { display: block; text-align: center; border-top: 1px solid #eee; }
+	.m_btn_list_view { width: 100%; padding: 8px 0; font-size: 11px; color: #999; }
+	.m_btn_list_view span:after { content: ""; display: inline-block; width: 15px; height: 10px; background: url(../images/n_channel/btn_pg_open.png) no-repeat; background-size: 15px; }
+}
+
+/* 채널 정보 기본형 */
+.new_ch_info { padding-top: 50px; text-align: center; }
+.new_ch_info .ch_title { display: block; margin-bottom: 20px; font-size: 30px; color: #fff; text-shadow: -1px 1px 2px #66696e; }
+.new_ch_info .ch_profile_img { display: inline-block; margin-bottom: 20px; width: 100px; height: 100px; border-radius: 50%; }
+.new_ch_info .ch_profile_img img { width: 100%; height: 100%; }
+.new_ch_info .ch_activity_info { font-size: 0; margin-bottom: 20px; }
+.new_ch_info .ch_activity_info span { font-size: 14px; color: #b0b0b0; }
+.new_ch_info .ch_activity_info > span:first-of-type:after { content: ''; display: inline-block; margin: 3px 10px 0; width: 1px; height: 12px; background: #b0b0b0; vertical-align: top; }
+.new_ch_info .ch_activity_info span span { margin-left: 3px; }
+.new_ch_info .ch_btn_area button { position: relative; border: 1px solid #fff; color: #fff; padding: 0 30px 0 15px; border-radius: 15px; font-size: 14px; line-height: 28px; }
+.new_ch_info .ch_btn_area button:first-of-type { margin-right: 5px; }
+.new_ch_info .btn_follow:after { content: '+'; position: absolute; top: -1px; right: 12px; font-size: 20px; }
+.new_ch_info .btn_follow.on, .new_ch_info .btn_follow:hover { background: #35c2cc; border-color: #35c2cc; }
+.new_ch_info .btn_follow.on:after { content: '-'; font-size: 26px; top: -3px; }
+.new_ch_info .btn_mesg:after { content: ''; position: absolute; right: 12px; top: 10px; display: inline-block; width: 12px; height: 10px; background: url("../images/n_channel/envelope.gif") no-repeat center center; background-size: cover; }
+
+/*채널 상세 페이지*/
+.ch_visual_area { width: 100%; height: 330px; background-repeat: no-repeat; background-size: cover; background-position: center center; margin-bottom: 25px; }
+.view_ch_info_wrapper { width: 100%; padding-top: 25px; padding: 0 10px; font-size: 14px; box-sizing: border-box; border-bottom: 1px solid #e9e9e9; color: #333; }
+.view_ch_info_wrapper .ch_dsc { margin-bottom: 30px; text-align: left; line-height: 1.8; white-space: pre-wrap; }
+.ch_category_info { margin-bottom: 20px; }
+.ch_category_info span:first-of-type { color: #999999; }
+.ch_category_info span:first-of-type:after { content: ''; display: inline-block; margin: 0 10px; width: 1px; height: 12px; background: #eeeeee; vertical-align: top; margin-top: 3px; }
+.ch_tags_wrapper { margin-bottom: 30px; overflow: hidden }
+/*[Start]태그 작동시 필요한 스타일 */
+.ch_tags_wrapper ul { text-align: left; white-space: nowrap; font-size: 0; }
+.ch_tags_wrapper li { display: inline-block; font-size: 14px; padding-right: 20px; }
+.ch_tags_wrapper li a { display: inline-block; padding: 5px 0; }
+/*[End]태그 작동시 필요한 스타일 */
+.ch_tags_wrapper li a:before { content: '#'; }
+.view_ch_info_wrapper .share_btn_area { padding-bottom: 30px; font-size: 0; }
+.view_ch_info_wrapper .share_btn_area button { margin-left: 16px; }
+.view_ch_info_wrapper .share_btn_area button:first-of-type { margin-left: 0; }
+.tab_wrapper { margin: 60px 0 40px; }
+.episepisode_wrapper .movie_list_area { margin-top: 0; }
+
+/*더보기 버튼*/
+.view_more_contents { position: relative; height: 40px; text-align: center; }
+.view_more_contents:before { content: ''; position: absolute; top: 20px; display: block; width: 100%; border-top: 1px solid #edeef2; z-index: -1; }
+.view_more_contents button { display: inline-block; width: 60px; height: 40px; background: url(../images/n_channel/btn_more_contents.png) center center no-repeat; background-size: contain; font-size: 0; }
+@media all and (max-width:767px) {
+	/* 채널 정보 기본형 */
+	.new_ch_info { padding-top: 30px; }
+	.new_ch_info .ch_title { margin-bottom: 10px; font-size: 19px; }
+	.new_ch_info .ch_profile_img { margin-bottom: 10px; width: 60px; height: 60px; }
+	.new_ch_info .ch_activity_info { margin-bottom: 10px; }
+	.new_ch_info .ch_activity_info span { font-size: 12px; }
+	.new_ch_info .ch_activity_info > span:first-of-type:after { height: 10px; margin: 3px 8px 0; }
+	.new_ch_info .ch_btn_area button { padding: 0 16px 0 9px; font-size: 11px; line-height: 18px; }
+	.new_ch_info .btn_follow:after { right: 4px; font-size: 15px; }
+	.new_ch_info .btn_follow.on:after { right: 5px; font-size: 21px; }
+	.new_ch_info .btn_mesg:after { width: 9px; height: 7px; top: 6px; right: 5px; }
+
+	/*채널 상세 페이지*/
+	.ch_visual_area { margin-bottom: 20px; height: 200px; }
+	.view_ch_info_wrapper { font-size: 12px; border-bottom: none; }
+	.view_ch_info_wrapper:after { content: ''; display: block; height: 9px; border-top: 1px solid #e1e1e1; border-bottom: 1px solid #e1e1e1; background: #f4f4f4; margin-left: -10px; margin-right: -10px; }
+	.view_ch_info_wrapper .ch_dsc { margin-bottom: 28px; line-height: 1.3; }
+	.ch_category_info { margin-bottom: 0; }
+	.ch_tags_wrapper { margin-bottom: 25px; }
+	.ch_tags_wrapper li a { font-size: 12px; color: #333; }
+	.view_ch_info_wrapper .share_btn_area { margin-bottom: 0; padding: 12px 0; border-top: 1px solid #e9e9e9; border-bottom: none; box-sizing: border-box; }
+	.view_ch_info_wrapper .share_btn_area button { width: 24px; height: 24px; margin-left: 8px; background-size: 20px 20px }
+	.view_ch_info_wrapper + .tab_wrapper { margin: 10px 0; padding: 0 10px; }
+
+	/*더보기 버튼*/
+	.view_more_contents { height: auto; }
+	.view_more_contents:before { position: static; }
+	.view_more_contents button { width: 100%; height: 30px; font-size: 11px; color: #999999; background: none; }
+	.view_more_contents button:after { content: ''; margin-left: 4px; display: inline-block; width: 8px; height: 5px; background: url("../images/n_channel/btn_view_more.png") center center no-repeat; background-size: contain; }
+}
+
+
+
+
+
+
+/******************
+* My Channel
+******************/
+
+/*** 리스트 정렬 스타일 정의 - 리스트를 감싸는 래퍼 안의 ul에 클래스를 추가하여 사용한다.***/
+/*마이채널 방송탭 탭 - 추가 사용: 방송관 카테고리*/
+.align_broadcast_list li { margin-bottom: 50px;}
+/*마이채널 크리에이터 탭*/
+.align_creator_list { padding-bottom: 40px; }
+.align_creator_list li { margin-bottom: 20px; }
+@media all and (min-width:1281px) {
+	/*전체탭 - 방송리스트 - 추가 사용: 방송관 메인*/
+	.align_alltab_boadcast li { margin-right: 20px;}
+	.align_alltab_boadcast li:nth-of-type(n+6) { margin-right: 0; }
+	/*전체탭 - 크리에이터 리스트*/
+	.align_alltab_creator li { margin-right: 20px; }
+	.align_alltab_creator li:nth-of-type(n+5) { margin-right: 0; }
+	/*마이채널 방송탭 탭 - 추가 사용: 방송관 카테고리*/
+	.align_broadcast_list li { margin-right: 20px;}
+	.align_broadcast_list li:nth-of-type(6n) { margin-right: 0; }
+	/*마이채널 크리에이터 탭*/
+	.align_creator_list li { margin-right: 20px;}
+	.align_creator_list li:nth-of-type(5n) { margin-right: 0; }
+}
+@media all and (min-width:1024px) and (max-width:1280px) {
+	/*전체탭 - 방송리스트 - 추가 사용: 방송관 메인*/
+	.align_alltab_boadcast li { margin-right: 18px; }
+	.align_alltab_boadcast li:nth-of-type(n+6) { display: none; }
+	.align_alltab_boadcast li:nth-of-type(n+5) { margin-right: 0; }
+	/*전체탭 - 크리에이터 리스트*/
+	.align_alltab_creator li { margin-right: 31px; }
+	.align_alltab_creator li:nth-of-type(n+4) { margin-right: 0; }
+	.align_alltab_creator li:nth-of-type(n+5) { display: none; }
+	/*마이채널 방송탭 탭 - 추가 사용: 방송관 카테고리*/
+	.align_broadcast_list li { margin-right: 18px; }
+	.align_broadcast_list li:nth-of-type(5n) { margin-right: 0; }
+	/*마이채널 크리에이터 탭*/
+	.align_creator_list li { margin-right: 31px; }
+	.align_creator_list li:nth-of-type(4n) { margin-right: 0; }
+}
+@media all and (min-width:768px) and (max-width:1023px) {
+	/*전체탭 - 방송리스트 - 추가 사용: 방송관 메인*/
+	.align_alltab_boadcast li { margin-right: 12px; }
+	.align_alltab_boadcast li:nth-of-type(n+4) { margin-right: 0; }
+	.align_alltab_boadcast li:nth-of-type(n+5) { display: none; }
+	/*전체탭 - 크리에이터 리스트*/
+	.align_alltab_creator li { margin-right: 48px; }
+	.align_alltab_creator li:nth-of-type(n+3) { margin-right: 0; }
+	.align_alltab_creator li:nth-of-type(n+4) { display: none; }
+	/*마이채널 방송탭 탭 - 추가 사용: 방송관 카테고리*/
+	.align_broadcast_list li { margin-right: 12px; }
+	.align_broadcast_list li:nth-of-type(4n) { margin-right: 0; }
+	/*마이채널 크리에이터 탭*/
+	.align_creator_list li { margin-right: 48px; }
+	.align_creator_list li:nth-of-type(3n) { margin-right: 0; }
+}
+@media all and (max-width:767px) {
+	/*전체탭 - 방송리스트 - 추가 사용: 방송관 메인*/
+	.align_alltab_boadcast li { margin-bottom: 20px; width: 50%; box-sizing: border-box; }
+	.align_alltab_boadcast li:nth-of-type(odd) { padding-right: 5px; }
+	.align_alltab_boadcast li:nth-of-type(even) { padding-left: 5px; }
+	.align_alltab_boadcast li:nth-of-type(n+3) { margin-bottom: 0; }
+	.align_alltab_boadcast li:nth-of-type(n+5) { display: none; }
+	/*전체탭 - 크리에이터 리스트*/
+	.align_alltab_creator li { margin-bottom: 10px; width: 50%; box-sizing: border-box; }
+	.align_alltab_creator li:nth-of-type(odd) { padding-right: 5px; }
+	.align_alltab_creator li:nth-of-type(even) { padding-left: 5px; }
+	.align_alltab_creator li:nth-of-type(n+3) { margin-bottom: 0; }
+	.align_alltab_creator li:nth-of-type(n+5) { display: none; }
+	/*마이채널 방송탭 탭 - 추가 사용: 방송관 카테고리*/
+	.align_broadcast_list { padding-bottom: 30px; }
+	.align_broadcast_list li { margin-bottom: 20px; width: 50%; box-sizing: border-box; }
+	.align_broadcast_list li:nth-of-type(odd) { padding-right: 5px; }
+	.align_broadcast_list li:nth-of-type(even) { padding-left: 5px; }
+	/*마이채널 크리에이터 탭*/
+	.align_creator_list li { margin-bottom: 10px; width: 50%; box-sizing: border-box; }
+	.align_creator_list li:nth-of-type(odd) { padding-right: 5px; }
+	.align_creator_list li:nth-of-type(even) { padding-left: 5px; }
+}
+
+
+/***channel broadcast item - 방송 기본형***/
+.ch_broadcast_item { width: 183px; }
+.ch_broadcast_item .ch_poster_area { position: relative; display: block; width: 100%; height: 263px; margin-bottom: 16px; }
+.ch_broadcast_item .ch_poster_area img { width: 100%; height: 100%; }
+.broadcaster_info_area a { display: block; margin-bottom: 10px; line-height: 1.5; font-size: 16px; }
+.broadcaster_info_area a span { display: block; }
+.broadcaster_info_area .ch_name { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.broadcaster_info_area { margin-bottom: 12px; }
+.ch_ctnt_follow { font-size: 14px; color: #999999; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.ch_ctnt_follow > span:nth-of-type(2) { margin-right: 10px; }
+.ch_ctnt_follow span:nth-of-type(2), .ch_ctnt_follow span:nth-of-type(4) { margin-left: 2px; }
+
+button.btn_ch_follow { position: relative; border: 1px solid #dddddd; color: #999999; padding: 0 26px 0 15px; border-radius: 15px; font-size: 14px; line-height: 28px; overflow: hidden; }
+button.btn_ch_follow:after { content: '+'; position: absolute; top: -1px; right: 11px; font-size: 20px; }
+button.btn_ch_follow.on, button.btn_ch_follow:hover { background: #35c2cc; border-color: #35c2cc; color: #fff; }
+button.btn_ch_follow.on:after { content: '-'; top: -3px; right: 13px; font-size: 26px; font-weight: lighter; }
+@media all and (max-width:767px) {
+	/***channel broadcast item - 방송 기본형***/
+	.ch_broadcast_item { width: 100%; }
+	.ch_broadcast_item .ch_poster_area { height: auto; margin-bottom: 7px; padding-top: 144%; }
+	.ch_broadcast_item .ch_poster_area img { position: absolute; top: 0; left: 0; right: 0; bottom: 0; width: 100%; height: 100%; }
+	.broadcaster_info_area { margin-bottom: 8px; }
+	.broadcaster_info_area a { margin-bottom: 5px; font-size: 15px; }
+	.ch_ctnt_follow { font-size: 12px; }
+	.ch_ctnt_follow > span:nth-of-type(2) { margin-right: 5px; }
+	button.btn_ch_follow { padding: 0 14px 0 8px; line-height: 18px; font-size: 12px; }
+	button.btn_ch_follow:after { top: -2px; right: 2px; font-size: 19px; }
+	button.btn_ch_follow.on:after { top: -3px; right: 3px; font-size: 24px; }
+}
+
+/***channel creator item - 크리에이터 기본형***/
+.ch_creator_item { position: relative; width: 222px; padding: 28px 0 60px; border: 1px solid #ebecf1; text-align: center; }
+.creator_category { display: block; margin-bottom: 10px; font-size: 14px; color: #35c2cc; }
+.ch_creator_item a { display: block; margin-bottom: 6px; }
+.creator_ch_info .tit_ch_creator { display: block; height: 43px; line-height: 1.3; margin-bottom: 15px; padding: 0 10px; font-size: 16px; color: #3c3d41; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.creator_profile_area .creator_img { width: 85px; height: 85px; margin: 0 auto 12px; border-radius: 50%; }
+.creator_profile_area .creator_img img { width: 100%; height: 100%; }
+.creator_profile_area .creator_nick { display: block; padding: 0 10px; font-size: 14px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ch_creator_item .ch_ctnt_follow { margin-bottom: 12px; }
+.ch_creator_item .btn_ch_follow { position: absolute; bottom: 30px; left: 50%; margin-left: -42px; }
+.ch_creator_item .btn_ch_setting { position: absolute; top: 10px; left: 10px; display: block; width: 34px; height: 34px; border-radius: 50%; background: url("../images/n_channel/ico_operate.gif") center center no-repeat; background-size: contain; font-size: 0; color: transparent; }
+@media all and (max-width:767px) {
+	/***channel creator item - 크리에이터 기본형***/
+	.ch_creator_item { width: 100%; padding: 20px 0 40px; }
+	.creator_category { font-size: 11px; }
+	.creator_ch_info .tit_ch_creator { height: 32px; font-size: 12px; margin-bottom: 7px; }
+	.creator_profile_area .creator_img { position: relative; width: 29%; height: auto; margin-bottom: 9px; padding-top: 29%; }
+	.creator_profile_area .creator_img img { position: absolute; top: 0; left: 0; right: 0; bottom: 0; width: 100%; height: 100%; }
+	.ch_creator_item a { margin-bottom: 5px; }
+	.creator_profile_area .creator_nick { font-size: 11px; }
+	.ch_creator_item .ch_ctnt_follow { margin-bottom: 10px; }
+	.ch_creator_item .btn_ch_follow { bottom: 20px; margin-left: -30px; }
+	.ch_creator_item .btn_ch_setting { top: 4px; left: 4px; width: 26px; height: 26px; }
+}
+
+
+/*마이채널*/
+.list_my_channel { color: #333333; }
+.list_my_channel .tab_container { padding-bottom: 60px; }
+.mychnn_header_area { position: relative; margin: 60px 0 50px; }
+.mychnn_header_area h2 { margin-bottom: 30px; font-size: 34px; text-align: center; }
+.btn_create_channel { position: absolute; bottom: 0; right: 0; display: inline-block; min-width: 140px; line-height: 40px; color: #fff; font-size: 14px; background-color: #c9338b; border-radius: 20px; }
+.list_my_channel .tab_type01 li { width: 160px; }
+.cate_tit_area { position: relative; margin-bottom: 20px; }
+.cate_tit_area h3 { font-size: 26px; font-weight: normal; }
+.btn_view_all { font-size: 12px; color: #999999; }
+.btn_view_all:after { content: ''; display: inline-block; width: 5px; height: 10px; margin-left: 8px; background: url("../images/n_channel/btn_angle_r_bracket.gif") center center no-repeat; background-size: contain; }
+.cate_tit_area .btn_view_all { position: absolute; top: 8px; right: 0; }
+.ch_list_wrapper ul:after { content: ''; display: block; clear: both; }
+.ch_list_wrapper ul li { float: left; }
+.ch_category_wrapper { margin-bottom: 60px; }
+.ch_category_wrapper .ch_category_list { margin-bottom: 40px; padding-bottom: 60px; border-bottom: 1px solid #ebecf1; }
+.ch_category_wrapper .ch_category_list:last-of-type { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+/*방송관*/
+.broadcast_category_wrapper { height: 50px; background-color: #f5f7fa; overflow: hidden; }
+.broadcast_category_wrapper .broadcast_scroll_list { margin: 0 auto; }
+.broadcast_category_wrapper .broadcast_scroll_list ul { white-space: nowrap; text-align: left; }
+.broadcast_category_wrapper .broadcast_scroll_list ul:after { content: ''; display: block; clear: both; }
+.broadcast_category_wrapper .broadcast_scroll_list ul li { float: left; padding-right: 70px; height: 50px; }
+.broadcast_category_wrapper .broadcast_scroll_list ul li:last-of-type { padding-right: 0; }
+.broadcast_category_wrapper .broadcast_scroll_list ul li a { display: block; height: 100%; }
+.broadcast_category_wrapper .broadcast_scroll_list ul li a img { height: 100%; }
+.broadcast_category_container_wrapper { padding: 60px 0 50px; }
+.broadcast_category_container { margin-bottom: 60px; }
+.tit_broadcasting_category_area { position: relative; margin-bottom: 30px; text-align: center; }
+.tit_broadcasting_category_area h2 { margin-bottom: 5px; font-size: 34px; font-weight: normal; color: #343434; }
+.tit_broadcaster_area { margin-bottom: 30px; }
+.tit_broadcaster_area > span { line-height: 34px; font-size: 26px; color: #999999; }
+.tit_broadcaster_area > span:after { content: ''; display: inline-block; width: 1px; height: 26px; margin: 0 26px 2px 30px; background: #dddddd; vertical-align: bottom; }
+.tit_broadcaster_area h2 { display: inline; line-height: 34px; font-size: 34px; font-weight: normal; color: #343434; vertical-align: bottom; letter-spacing: -2px; }
+.tit_broadcaster_area h2 span { color: #c9338b; vertical-align: bottom; }
+@media all and (min-width:768px) and (max-width:1023px) {
+	.list_my_channel .tab_type01 li { width: 140px; }
+}
+@media all and (max-width:767px) {
+	/*마이채널*/
+	.list_my_channel { padding: 0 14px; box-sizing: border-box; }
+	.list_my_channel .tab_container { padding-bottom: 0; }
+	.mychnn_header_area { margin: 20px 0; }
+	.mychnn_header_area h2 { margin-bottom: 10px; line-height: 28px; font-size: 17px; text-align: left; }
+	.btn_create_channel { bottom: auto; top: 0; min-width: 100px; line-height: 28px; font-size: 12px; }
+	.list_my_channel .tab_wrapper { margin: 0 0 18px; }
+	.list_my_channel .tab_type01 li a { font-size: 14px; }
+	.cate_tit_area { margin-bottom: 13px; }
+	.cate_tit_area h3 { font-size: 16px; font-weight: bold; }
+	.cate_tit_area .btn_view_all { top: 2px; }
+	.ch_category_wrapper { margin-bottom: 50px; }
+	.ch_category_wrapper .ch_category_list { margin-bottom: 20px; padding-bottom: 40px; }
+	/*방송관*/
+	.broadcast_category_wrapper { height: 35px; width: 100%; padding-left: 14px; box-sizing: border-box;}
+	.broadcast_category_wrapper .broadcast_scroll_list { margin: 0; }
+	.broadcast_category_wrapper .broadcast_scroll_list ul li { height: 35px; padding-right: 23px; display: inline-block;/*display속성을 바꿔줘야 미디어쿼리 변경으로 인한 스크롤의 너비를 제대로 잡을 수 있다.*/}
+	.broadcast_category_wrapper .broadcast_scroll_list ul li:last-of-type {
+		padding-right: 40px;
+	}
+	.tit_broadcaster_area { margin-bottom: 13px; }
+	.tit_broadcaster_area > span { line-height: 14px; font-size: 14px; font-weight: bold;}
+	.tit_broadcaster_area > span:after { height: 12px; margin: 0 12px 1px 14px; }
+	.tit_broadcaster_area h2 { line-height: 14px; font-size: 14px; font-weight: bold; letter-spacing: -1px; }
+	.broadcast_category_container_wrapper { padding: 20px 14px 0; }
+	.broadcast_category_container { margin-bottom: 30px; }
+	.tit_broadcasting_category_area { margin-bottom: 10px; }
+	.tit_broadcasting_category_area h2 { font-size: 16px; font-weight: bold; text-align: left; }
+	.tit_broadcasting_category_area .btn_view_all { position: absolute; top: 2px; right: 0; }
+}
+
